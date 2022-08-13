@@ -21,6 +21,15 @@ services:
     volumes:
       - /volumes/www/portal:/usr/share/nginx/html:ro
 
+  factura:
+    image: nginx
+    container_name: Factura
+    restart: always
+    environment:
+      - VIRTUAL_HOST=factura-mtw.ddns.net
+    volumes:
+      - /volumes/www/factura:/usr/share/nginx/html:ro
+
   # ERP
   erp:
     image: httpd
